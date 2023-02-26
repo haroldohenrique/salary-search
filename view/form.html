@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Search</title>
+    <link rel="stylesheet" href="../css/style-form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <main class="main">
+        <section class="container1">
+            <form class="formContainer">
+
+                <div class="divContainer">
+                    <label class="label-input" for="nomeSobrenome">Nome e sobrenome</label>
+                    <input type="text" class="input-padrao">
+                </div>
+
+
+                <div class="divContainer">
+                    <div class="div-radio">
+                        <label class="label-input" for="sexo">Sexo</label>
+                        <div class="div-radio1">
+                            <label class="label-radio"for="sexo"><input type="radio" name="sexo" value="homem" class="input-radio">Homem</label>
+                            <label class="label-radio" for="sexo"><input type="radio" name="sexo" value="mulher" class="input-radio">Mulher</label>   
+                        </div>                   
+                    </div>
+                </div>
+
+
+                <div class="divContainer">
+                    <label class="label-input" for="empresa">Nome da empresa</label>
+                    <input type="text" class="input-padrao" required>
+                </div>
+
+
+                <div class="divContainer">
+                    <label class="label-input" for="profissao">Qual sua profissão?</label>
+                    <select name="profissoes" id="profissao-id" class="profissao"required>
+
+                        <option selected data-default>-------- Selecione --------</option>
+                        <option value="Advogado">Advogado</option>
+                        <option value="Atendente de caixa">Atendente de caixa</option>
+                        <option value="Atendente de loja">Atendente de loja</option>
+                        <option value="Auxiliar de escritorio">Auxiliar de escritório</option>
+                        <option value="Cabelereiro">Cabelereiro</option>
+                        <option value="Padeiro/Confeiteiro">Padeiro/Confeiteiro</option>
+                        <option value="Professor">Professor</option>
+                        <option value="Programador">Programador</option>
+                        <option value="Serviços gerais">Serviços gerais</option>
+                        <option value="Vidraceiro">Vidraceiro</option>
+
+                    </select>
+                </div>
+
+                <div class="divContainer">
+                    <label class="label-input" for="salario">Qual o seu salário?</label>
+                    <input type="number" class="input-padrao" placeholder="xxxx,xx" required>
+                </div>
+
+                <div class="botao-submit">
+                    <input type="submit" class="input-botao" value="Cadastrar">
+                </div>
+            </form>
+            <div class="botao-voltar">
+                <a href="../view/index.html"><button class="botao">Voltar</button></a>
+            </div>
+            
+        </section>
+    </main>
+</body>
+</html>
