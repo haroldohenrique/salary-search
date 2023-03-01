@@ -6,6 +6,7 @@ from sqlalchemy import create_engine, Column, Integer, String, Float
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.declarative import declarative_base
 
+
 # CONFIGURAR CONEXÃO COM BANCO DE DADOS SQLITE
 # caso o arquivo de banco não exista, ele será criado
 engine = create_engine("sqlite:///server.db")

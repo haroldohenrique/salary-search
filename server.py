@@ -5,7 +5,9 @@ app = Flask(__name__)
 
 @app.route("/serve/<usuario>", methods = ["GET"])
 def hello(usuario):
-    return jsonify(usuario), 200
+    if usuario == "Haroldo":
+        return jsonify(usuario), 401
+    return jsonify(f"Parabéns, usuário logado: {usuario}"), 200
 
 @app.route("/serve", methods = ["POST"])
 def inserir_mvno():
