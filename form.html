@@ -44,7 +44,23 @@
 
                 <div class="divContainer">
                     <label class="label-input" for="empresa">Nome da empresa</label>
-                    <input type="text" id="empresa" class="input-padrao" required>
+                    <select name="empresas" id="empresa-id" class="empresa">
+                        
+                        <option selected data-default>-------- Selecione --------</option>
+                        <option value="Açougue Narbalino">Açougue Narbalino</option>
+                        <option value="Distribuidora Copa Pistão">Distribuidora Copa Pistão</option>
+                        <option value="E.E.B Hercílio Escuro">E.E.B Hercílio Escuro</option>
+                        <option value="HairStyles Cabelereiro">HairStyles Cabelereiro</option>
+                        <option value="HARDEK Internet">HARDEK Internet</option>
+                        <option value="IBM Contabilidade">IBM Contabilidade</option>
+                        <option value="JavasBird Soluções Internet">JavasBird Soluções Internet</option>
+                        <option value="Padaria Cardosita">Padaria Cardosita</option>
+                        <option value="Petitoso PETSHOP">Petitoso PETSHOP</option>
+                        <option value="Vidraçaria Nerso">Vidraçaria Nerso</option>
+                    </select>
+                    <small class="smallText">Não encontrou sua empresa?
+                        <button type="button" class="botao-empresa" id="botao-empresa">Cadastre Aqui</button>
+                    </small>
                 </div>
 
 
@@ -81,7 +97,21 @@
             </div>
             
         </section>
+        <div class="div-escondida" id="div-escondida">
+            <form class="form-escondido" id="form-escondido">
+                <div class="containerEscondido">
+                    <label for="empresa-cadastro" class="label-input">Registrar empresa</label>
+                    <input type="text" class="input-padrao" id="empresa-cadastro" required>
+                </div>
+                <div class="botao-escondidos">
+                    <button type="button" class="botao1" id="botao1">Fechar</button>
+                    <button type="submit" class="botao-submit-escondido" id="botao-submit-escondido">Registrar</button>
+                </div>
+            </form>
+            
+        </div>
     </main>
 <script src="js/ajax.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
