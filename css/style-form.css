@@ -106,11 +106,96 @@ input[type='radio']:checked:after {
     width: 12vw;
 }
 
-.profissao {
+
+.profissao, .empresa {
     background-color: rgb(175, 175, 175);
     border: 1px solid #fff;
     width: 12vw;
 }
+
+.smallText {
+    margin-top: 1vh;
+    font-size: 1vw;
+    font-family: 'Kanit', sans-serif;
+}
+
+.smallText:hover{
+    cursor: default;
+}
+
+.botao-empresa {
+    color: rgb(137, 137, 137);
+    font-size: 1vw;
+    font-family: 'Kanit', sans-serif;
+    background-color: #000;
+    border: none;
+}
+
+.botao-empresa:hover{
+    cursor: pointer;
+    color: #236cfe;
+    font-weight: bold;
+}
+
+.botao-empresa:active{
+    transform: scale(97%);
+}
+
+/* DIV ESCONDIDA */
+
+.div-escondida {
+    background-color: #343434;
+    width: 13vw;
+    height: 13vh;
+    color: #fff;
+    border: 1px dashed rgb(255, 255, 255);
+    position: absolute;
+    top: 40vh;
+    left: 40vw;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-escondido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3vh;
+}
+
+.containerEscondido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao1, .botao-submit-escondido {
+    font-size: 2vh;
+    font-family: 'Kanit', sans-serif;
+    text-shadow: 2px 2px 3px #055dba ;
+    color: rgb(255, 253, 253);
+    background-color: #343434;
+    border: 1px solid #343434;
+    border-radius: 3vh;
+}
+
+.botao1:hover, .botao-submit-escondido:hover {
+    cursor: pointer;
+    background-color: #000;
+    box-shadow: 1px 1px 10px #0079fb;
+    border: 1px solid #fff;
+    transform: scale(105%);
+    transition: 0.3s;
+}
+
+
+/* ----------fim da div escondida--------------- */
+
+
 
 .botao-voltar {
     padding-left: 4vw;
