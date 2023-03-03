@@ -114,6 +114,7 @@ input[type='radio']:checked:after {
 }
 
 .smallText {
+    color: #fff;
     margin-top: 1vh;
     font-size: 1vw;
     font-family: 'Kanit', sans-serif;
@@ -156,6 +157,11 @@ input[type='radio']:checked:after {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#div-escondida1 {
+    top: 55vh;
+    left: 40vw;
 }
 
 .form-escondido {
@@ -223,6 +229,38 @@ input[type='radio']:checked:after {
     transition: 0.3s;
 }
 
+
+
+/* div resultados */
+
+.div-escondida2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5vh;
+    position: absolute;
+    top: 60vh;
+    left: 70vw;
+}
+
+.textoEscondido{
+    display: none;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+    background-color: #343434;
+    border: 1px solid #fff;
+    width: 20vw;
+    height: 20vh;
+}
+
+.div-botao-escondido {
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
 
 
 

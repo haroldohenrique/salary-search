@@ -20,7 +20,7 @@
 
 
 </head>
-<body>
+<body onload="starter_pack()">
     <main class="main">
         <section class="container1">
             <form class="formContainer" id="form">
@@ -47,19 +47,9 @@
                     <select name="empresas" id="empresa-id" class="empresa">
                         
                         <option selected data-default>-------- Selecione --------</option>
-                        <option value="Açougue Narbalino">Açougue Narbalino</option>
-                        <option value="Distribuidora Copa Pistão">Distribuidora Copa Pistão</option>
-                        <option value="E.E.B Hercílio Escuro">E.E.B Hercílio Escuro</option>
-                        <option value="HairStyles Cabelereiro">HairStyles Cabelereiro</option>
-                        <option value="HARDEK Internet">HARDEK Internet</option>
-                        <option value="IBM Contabilidade">IBM Contabilidade</option>
-                        <option value="JavasBird Soluções Internet">JavasBird Soluções Internet</option>
-                        <option value="Padaria Cardosita">Padaria Cardosita</option>
-                        <option value="Petitoso PETSHOP">Petitoso PETSHOP</option>
-                        <option value="Vidraçaria Nerso">Vidraçaria Nerso</option>
                     </select>
                     <small class="smallText">Não encontrou sua empresa?
-                        <button type="button" class="botao-empresa" id="botao-empresa">Cadastre Aqui</button>
+                        <button type="button" class="botao-empresa" id="botao-empresa" onclick="modal_show()">Cadastre Aqui</button>
                     </small>
                 </div>
 
@@ -69,18 +59,12 @@
                     <select name="profissoes" id="profissao-id" class="profissao"required>
 
                         <option selected data-default>-------- Selecione --------</option>
-                        <option value="Advogado">Advogado</option>
-                        <option value="Atendente de caixa">Atendente de caixa</option>
-                        <option value="Atendente de loja">Atendente de loja</option>
-                        <option value="Auxiliar de escritorio">Auxiliar de escritório</option>
-                        <option value="Cabelereiro">Cabelereiro</option>
-                        <option value="Padeiro/Confeiteiro">Padeiro/Confeiteiro</option>
-                        <option value="Professor">Professor</option>
-                        <option value="Programador">Programador</option>
-                        <option value="Serviços gerais">Serviços gerais</option>
-                        <option value="Vidraceiro">Vidraceiro</option>
+                        
 
                     </select>
+                    <small class="smallText">Não encontrou sua profissão?
+                        <button type="button" class="botao-empresa" id="botao-profissao" onclick="modal_show1()">Cadastre Aqui</button>
+                    </small>
                 </div>
 
                 <div class="divContainer">
@@ -89,7 +73,7 @@
                 </div>
 
                 <div class="botao-submit">
-                    <input type="submit" class="input-botao" value="Cadastrar">
+                    <input type="submit" class="input-botao" value="Cadastrar" onclick="modal_show2()">
                 </div>
             </form>
             <div class="botao-voltar">
@@ -101,13 +85,38 @@
             <form class="form-escondido" id="form-escondido">
                 <div class="containerEscondido">
                     <label for="empresa-cadastro" class="label-input">Registrar empresa</label>
-                    <input type="text" class="input-padrao" id="empresa-cadastro" required>
+                    <input type="text" class="input-padrao" id="empresa-cadastro">
                 </div>
                 <div class="botao-escondidos">
-                    <button type="button" class="botao1" id="botao1">Fechar</button>
+                    <button type="button" class="botao1" id="botao1" onclick="modal_close()">Fechar</button>
                     <button type="submit" class="botao-submit-escondido" id="botao-submit-escondido">Registrar</button>
                 </div>
             </form>
+            
+        </div>
+        <div class="div-escondida" id="div-escondida1">
+            <form class="form-escondido" id="form-escondido">
+                <div class="containerEscondido">
+                    <label for="profissao-cadastro" class="label-input">Registrar profissão</label>
+                    <input type="text" class="input-padrao" id="profissao-cadastro">
+                </div>
+                <div class="botao-escondidos">
+                    <button type="button" class="botao1" id="botao1" onclick="modal_close1()">Fechar</button>
+                    <button type="submit" class="botao-submit-escondido" id="botao-submit-escondido">Registrar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="div-escondida2" id="div-escondida2">
+            <div class="textoEscondido" id="resultado-escondido">
+                <p>O resultado da média salarial de acordo com a sua profissão e o salário inserido é de:
+                    <b id="resultado">resultado</b>
+                </p>
+            </div>
+            <div class="div-botao-escondido" id="div-botao-escondido">
+                <button class="botao" id="botao2" onclick="modal_show3()">Resultado</button>
+                <small class="smallText">Clique aqui para ver o resultado</small>
+            </div>
             
         </div>
     </main>
