@@ -13,33 +13,64 @@ $('#form').submit(function(e){
             data: {nome:u_nome, empresa: u_empresa, profissao: u_profissao, salario: u_salario, sexo: u_sexo}, 
             dataType: 'json' 
         }).done(function(result){ 
-             console.log(result)
+    //          console.log(result)
+
+    // getSalary(u_empresa, u_profissao, u_sexo);
+
+    $.ajax({ 
+                url: 'http://localhost/salary-search/ajax/getMediaSalarial.php', 
+                method: 'POST', 
+                data: {empresa: u_empresa, profissao: u_profissao, sexo: 'homem' }, 
+                dataType: 'json' 
+            }).done(function(resultado){ 
+                 console.log(resultado)
+                
+        var json = resultado;
+
+        document.getElementById("homens").innerHTML = "Homens: R$"+resultado;
+
+        $.ajax({ 
+                    url: 'http://localhost/salary-search/ajax/getMediaSalarial.php', 
+                    method: 'POST', 
+                    data: {empresa: u_empresa, profissao: u_profissao, sexo: 'mulher' }, 
+                    dataType: 'json' 
+                }).done(function(resultado){ 
+                     console.log(resultado)
+                    
+            var json = resultado;
+    
+            document.getElementById("mulheres").innerHTML = "Mulheres: R$"+resultado;
+    
+            
+    
+            new swal({
+                title: "Obrigado!",
+                text: "Dados preenchidos com sucesso!",
+                icon: "success",                            
+            })
+        
+            .then((confirm) => {
+            if (confirm) {
+                $('#nomeSobrenome').val(""); 
+                $('#empresa-id').val(""); 
+                $('#profissao-id').val(""); 
+                $('#salario').val(""); 
+                $('input[name="sexo"]:checked').val(""); 
+                
+            } else {
+                $('#nomeSobrenome').val(""); 
+                $('#empresa-id').val(""); 
+                $('#profissao-id').val(""); 
+                $('#salario').val(""); 
+                $('input[name="sexo"]:checked').val(""); 
+            }
+            });
+        
+                });
+    
+            }); 
             
     
-    new swal({
-        title: "Obrigado!",
-        text: "Dados preenchidos com sucesso!",
-        icon: "success",                            
-    })
-
-    .then((confirm) => {
-    if (confirm) {
-        $('#nomeSobrenome').val(""); 
-        $('#empresa-id').val(""); 
-        $('#profissao-id').val(""); 
-        $('#salario').val(""); 
-        $('input[name="sexo"]:checked').val(""); 
-        
-    } else {
-        $('#nomeSobrenome').val(""); 
-        $('#empresa-id').val(""); 
-        $('#profissao-id').val(""); 
-        $('#salario').val(""); 
-        $('input[name="sexo"]:checked').val(""); 
-    }
-    });
-
-
         }); 
     });
 
@@ -78,6 +109,46 @@ $('#form').submit(function(e){
     
             }); 
         });
+
+
+        $('#form-escondido2').submit(function(e){ 
+                e.preventDefault(); 
+            var u_profissao = $('#profissao-cadastro').val(); 
+    
+        
+                         
+                $.ajax({ 
+                    url: 'http://localhost/salary-search/ajax/novaProfissao.php', 
+                    method: 'POST', 
+                    data: {profissao: u_profissao}, 
+                    dataType: 'json' 
+                }).done(function(result){ 
+                     console.log(result)
+                    
+            
+            new swal({
+                title: "Ok!",
+                text: "Cadastrado!",
+                icon: "success",                            
+            })
+        
+            .then((confirm) => {
+            if (confirm) {
+                $('#profissao-cadastro').val(""); 
+                profissao();
+                
+            } else {
+                $('#profissao-cadastro').val(""); 
+            }
+            });
+        
+        
+                }); 
+            });
+
+
+
+
 
 function starter_pack()
 {
@@ -143,3 +214,19 @@ function clearSelect2() {
         $('#empresa-id').empty();
         // $('#plano').prepend('<option value="0" selected>Selecione</option>');
     }
+
+
+function getSalary(empresa_u, profissao_u, sexo) {
+    $.ajax({ 
+                url: 'http://localhost/salary-search/ajax/getMediaSalarial.php', 
+                method: 'POST', 
+                data: {empresa: empresa_u, profissao: profissao_u, sexo: 'homem' }, 
+                dataType: 'json' 
+            }).done(function(resultado){ 
+                 console.log(resultado)
+                
+        var json = result;
+
+    
+            }); 
+}

@@ -3,13 +3,13 @@
     header('Content-Type: application/json');
 
     $pdo = new PDO("mysql:host=localhost; dbname=salary-search","root","");
-    $empresa = $_POST['empresa'];
+    $profissao = $_POST['profissao'];
     // echo json_encode($_POST);
     
-    $query = "INSERT INTO tb_empresa VALUES (0, :empresa)";
+    $query = "INSERT INTO tb_profissao VALUES (0, :profissao)";
 
         $sth = $pdo->prepare($query);
-        $sth->bindValue(':empresa', $empresa);
+        $sth->bindValue(':profissao', $profissao);
 
         $sth->execute();
 
