@@ -2,7 +2,7 @@
 
     header('Content-Type: application/json');
 
-    $pdo = new PDO("mysql:host=localhost; dbname=salary-search","root","");
+    $pdo = new PDO("mysql:host=localhost; dbname=salary-search","root","root");
 
     $empresa = $_POST['empresa'];
     $profissao = $_POST['profissao'];
@@ -22,7 +22,7 @@
 
     $sth->execute();
     $media = $sth->fetchAll(PDO::FETCH_ASSOC);
-    $media = $media[0]['media'] / 10;
+    $media = $media[0]['media'] / 100;
 
     
 

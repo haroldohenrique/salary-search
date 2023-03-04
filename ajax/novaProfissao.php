@@ -2,7 +2,7 @@
 
     header('Content-Type: application/json');
 
-    $pdo = new PDO("mysql:host=localhost; dbname=salary-search","root","");
+    $pdo = new PDO("mysql:host=localhost; dbname=salary-search","root","root");
     $profissao = $_POST['profissao'];
     // echo json_encode($_POST);
     
